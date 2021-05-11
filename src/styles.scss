@@ -1,4 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.toolbar {
+  margin: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.toolbar-input {
+  flex: 1;
+  margin-right: 16px;
+}
+
+.toolbar-button {
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-section {
+  flex: 1;
+}
+
+.list {
+  overflow-y: scroll;
+  height: 82vh;
+}
+
+.list-element {
+  cursor: pointer;
+  display: flex;
+}
+
+.name,
+.actions {
+  display: flex;
+  flex: 1;
+}
+
+.actions {
+  justify-content: flex-end;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-picture.mat-card-image {
+  width: calc(100% - 16px);
+  margin: 16px 0px 16px 8px;
+}

@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-header class="details-header">
+    <mat-card-title>{{ item.name }}</mat-card-title>
+    <mat-chip-list>
+      <mat-chip> {{ calculate(item.num) }}</mat-chip>
+    </mat-chip-list>
+  </mat-card-header>
+  <img class="details-picture" mat-card-image src="{{ item.picture }}" alt="{{ item.name }}">
+  <mat-card-content>
+    <p>
+      {{ item.description }}
+    </p>
+  </mat-card-content>
+</mat-card>

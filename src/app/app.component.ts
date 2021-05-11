@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-performance';
-  opened: boolean;
+  opened: boolean = true;
+  menu = [
+    {
+      path: 'general-unoptimized',
+      label: 'General Unoptimized'
+    },
+    {
+      path: 'onpush-unoptimized',
+      label: 'OnPush Unoptimized'
+    }
+  ]
 }

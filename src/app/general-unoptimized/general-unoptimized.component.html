@@ -1,0 +1,76 @@
+<div>
+  <div class="toolbar">
+    <mat-form-field class="toolbar-input">
+      <mat-label>Clearable input</mat-label>
+      <input matInput type="text" [(ngModel)]="value" />
+      <button
+        mat-button
+        *ngIf="value"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="value = ''"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <button class="toolbar-button" mat-raised-button (click)="addItem()">
+      Add To list
+    </button>
+  </div>
+  <div class="container">
+    <div class="container-section">
+      <mat-list class="list">
+        <mat-list-item
+          *ngFor="let item of myTodo; let i = index"
+          class="list-element"
+          (click)="viewItem(i)"
+        >
+          <div class="name">
+            <span>{{ item.name }}</span>
+          </div>
+          <div class="actions">
+            <mat-chip-list>
+              <mat-chip> {{ calculate(item.num) }}</mat-chip>
+            </mat-chip-list>
+            <button
+              (click)="increaseItemNum(i)"
+              mat-mini-fab
+              aria-label="increase"
+            >
+              <mat-icon>arrow_upward</mat-icon>
+            </button>
+            <button
+              (click)="decreaseItemNum(i)"
+              mat-mini-fab
+              aria-label="decrease"
+            >
+              <mat-icon>arrow_downward</mat-icon>
+            </button>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div *ngIf="selectedIndex || selectedIndex === 0" class="container-section">
+        <mat-card>
+          <mat-card-header class="details-header">
+            <mat-card-title>{{ myTodo[selectedIndex].name }}</mat-card-title>
+            <mat-chip-list>
+              <mat-chip> {{ calculate(myTodo[selectedIndex].num) }}</mat-chip>
+            </mat-chip-list>
+          </mat-card-header>
+          <img
+            class="details-picture"
+            mat-card-image
+            src="{{ myTodo[selectedIndex].picture }}"
+            alt="{{ myTodo[selectedIndex].name }}"
+          />
+          <mat-card-content>
+            <p>
+              {{ myTodo[selectedIndex].description }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+    </div>
+  </div>
+</div>

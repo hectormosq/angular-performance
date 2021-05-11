@@ -1,0 +1,17 @@
+<div>
+  <app-opu-todo-input (onNewItem)="addItem($event)"></app-opu-todo-input>
+  <div class="container">
+    <app-opu-todo-list
+      class="container-section"
+      [list]="myTodo"
+      (onViewItem)="viewItem($event)"
+      (onIncreaseNum)="increaseItemNum($event)"
+      (onDecreaseNum)="decreaseItemNum($event)"
+    ></app-opu-todo-list>
+    <app-opu-details
+      class="container-section"
+      *ngIf="selectedIndex !== undefined"
+      [item]="myTodo | selection: selectedIndex"
+    ></app-opu-details>
+  </div>
+</div>

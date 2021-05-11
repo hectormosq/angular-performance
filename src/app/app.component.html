@@ -7,10 +7,20 @@
   </mat-toolbar>
 
   <mat-sidenav-container class="app__sidenav-container">
-    <mat-sidenav #sidenav class="app__sidenav" mode="side" [(opened)]="opened"
-    [fixedBottomGap]="0">
+    <mat-sidenav
+      #sidenav
+      class="app__sidenav"
+      mode="side"
+      [(opened)]="opened"
+      [fixedBottomGap]="0"
+    >
       <mat-nav-list>
-        <a mat-list-item routerLink=".">Menu Item</a>
+        <a
+          *ngFor="let menuItem of menu"
+          mat-list-item
+          routerLink="{{ menuItem.path }}"
+          >{{ menuItem.label }}</a
+        >
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="app__content">
