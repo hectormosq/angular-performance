@@ -5,7 +5,7 @@ import { fibonacci } from 'src/app/shared/utils.component';
 @Component({
   selector: 'app-opu-details',
   templateUrl: './opu-details.component.html',
-  styleUrls: ['./opu-details.component.scss']
+  styleUrls: ['./opu-details.component.scss'],
 })
 export class OpuDetailsComponent {
   @Input() item: TodoListInterface;

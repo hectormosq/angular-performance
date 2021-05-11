@@ -4,7 +4,7 @@ import { TodoListInterface } from 'src/app/model/todo.constant';
 @Component({
   selector: 'app-opu-todo-input',
   templateUrl: './opu-todo-input.component.html',
-  styleUrls: ['./opu-todo-input.component.scss']
+  styleUrls: ['./opu-todo-input.component.scss'],
 })
 export class OpuTodoInputComponent {
 

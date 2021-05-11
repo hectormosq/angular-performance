@@ -8,7 +8,7 @@ import { myTodo } from '../model/todo.constant';
 @Component({
   selector: 'app-on-push-unoptimized',
   templateUrl: './on-push-unoptimized.component.html',
-  styleUrls: ['./on-push-unoptimized.component.scss']
+  styleUrls: ['./on-push-unoptimized.component.scss'],
 })
 export class OnPushUnoptimizedComponent {
   myTodo = myTodo;
@@ -27,12 +27,14 @@ export class OnPushUnoptimizedComponent {
 
   increaseItemNum(id) {
     this.myTodo[id].num++;
-    this.myTodo = [...this.myTodo]
   }
 
   decreaseItemNum(id) {
     this.myTodo[id].num--;
-    this.myTodo = [...this.myTodo]
+  }
+
+  updateList() {
+    this.myTodo = [...this.myTodo];
   }
 
   closeItem() {
