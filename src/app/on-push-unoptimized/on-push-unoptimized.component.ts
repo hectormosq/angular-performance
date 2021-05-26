@@ -17,8 +17,7 @@ export class OnPushUnoptimizedComponent {
 
   addItem(newItem) {
     console.log('Adding new item');
-    this.myTodo = [...this.myTodo, newItem];
-    // this.myTodo.push(newItem)
+    this.myTodo = [newItem, ...this.myTodo];
   }
 
   viewItem(id) {

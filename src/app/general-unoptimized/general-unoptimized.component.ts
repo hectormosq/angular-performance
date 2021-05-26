@@ -39,12 +39,10 @@ export class GeneralUnoptimizedComponent implements OnInit {
 
   increaseItemNum(id) {
     this.myTodo[id].num++;
-    this.myTodo = [...this.myTodo]
   }
 
   decreaseItemNum(id) {
     this.myTodo[id].num--;
-    this.myTodo = [...this.myTodo]
   }
 
   addItem() {
@@ -56,7 +54,7 @@ export class GeneralUnoptimizedComponent implements OnInit {
       picture: ''
     }
 
-    this.myTodo = [...this.myTodo, newItem];
+    this.myTodo = [newItem, ...this.myTodo];
     this.clearForm();
   }
 
